@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember & Roast — Specialty Coffee</title>
+  <meta name="description" content="Ember & Roast — авторская кофейня с зёрнами со всего мира. Specialty coffee, уникальная атмосфера, ручная обжарка.">
+  <meta name="theme-color" content="#1a0e05">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-cup">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 25h40v35c0 8-8 15-20 15s-20-7-20-15V25z" stroke="#c8a882" stroke-width="2" fill="none"/>
+          <path d="M55 32h8c5 0 9 4 9 9s-4 9-9 9h-8" stroke="#c8a882" stroke-width="2" fill="none"/>
+          <path class="steam steam-1" d="M28 20c0-5 4-5 4-10" stroke="#c8a882" stroke-width="1.5" stroke-linecap="round"/>
+          <path class="steam steam-2" d="M35 18c0-5 4-5 4-10" stroke="#c8a882" stroke-width="1.5" stroke-linecap="round"/>
+          <path class="steam steam-3" d="M42 20c0-5 4-5 4-10" stroke="#c8a882" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="preloader-text">Ember & Roast</div>
+      <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar" role="navigation" aria-label="Основная навигация">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Ember & Roast — на главную">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">Ember<span class="logo-amp">&</span>Roast</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#beans" class="nav-link" data-section="beans">Зёрна</a>
+        <a href="#story" class="nav-link" data-section="story">История</a>
+        <a href="#menu" class="nav-link" data-section="menu">Меню</a>
+        <a href="#contact" class="nav-cta-btn">Забронировать</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#beans" class="mobile-link">Зёрна</a>
+    <a href="#story" class="mobile-link">История</a>
+    <a href="#menu" class="mobile-link">Меню</a>
+    <a href="#contact" class="mobile-link cta">Забронировать</a>
+  </div>
+
+  <main>
+    <!-- ===================== HERO SECTION ===================== -->
+    <section id="hero" class="hero" aria-label="Главный экран">
+      <div class="hero-bg-wrap">
+        <div class="hero-bg" style="background-image:url('assets/hero-bg.jpg')"></div>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <!-- Animated coffee pour visual -->
+      <div class="hero-pour-container" aria-hidden="true">
+        <div class="pour-stream"></div>
+        <div class="pour-cup">
+          <img src="assets/hero-pour.jpg" alt="" loading="eager" class="pour-img">
+          <div class="pour-fill"></div>
+        </div>
+        <div class="pour-particles">
+          <span class="particle"></span><span class="particle"></span><span class="particle"></span>
+          <span class="particle"></span><span class="particle"></span><span class="particle"></span>
+          <span class="particle"></span><span class="particle"></span>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          Specialty Coffee с 2019
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line reveal-up" style="--d:0.1s">Каждая чашка —</span>
+          <span class="title-line title-accent reveal-up" style="--d:0.2s">произведение</span>
+          <span class="title-line reveal-up" style="--d:0.3s">искусства</span>
+        </h1>
+        <p class="hero-sub reveal-up" style="--d:0.4s">
+          Зёрна из лучших плантаций мира, обжаренные вручную<br>
+          каждую неделю. Вкус, который запоминается.
+        </p>
+        <div class="hero-actions reveal-up" style="--d:0.5s">
+          <a href="#menu" class="btn btn-primary">
+            <span>Открыть меню</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#story" class="btn btn-ghost">Наша история</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint reveal-up" style="--d:0.8s" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Листайте вниз</span>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="hero-float-badges" aria-hidden="true">
+        <div class="float-badge fb-1 reveal-up" style="--d:0.6s">
+          <strong>100%</strong>
+          <span>Арабика</span>
+        </div>
+        <div class="float-badge fb-2 reveal-up" style="--d:0.7s">
+          <strong>12+</strong>
+          <span>Сортов</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BEANS SECTION ===================== -->
+    <section id="beans" class="beans-section" aria-label="Наши зёрна">
+      <div class="beans-bg-parallax" aria-hidden="true">
+        <img src="assets/beans-panoramic.jpg" alt="" loading="lazy" class="beans-bg-img">
+      </div>
+
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Наши зёрна</span>
+          <h2 class="section-title">От плантации<br><em>до вашей чашки</em></h2>
+          <p class="section-desc">
+            Мы работаем напрямую с фермерами из Эфиопии, Колумбии и Гватемалы.
+            Каждый сорт — это уникальный терруар и история.
+          </p>
+        </div>
+
+        <div class="beans-grid">
+          <!-- Bean card 1 -->
+          <article class="bean-card reveal-up" style="--d:0.1s">
+            <div class="bean-card-img-wrap">
+              <img src="assets/beans-ethiopian.jpg" alt="Эфиопские зёрна" loading="lazy" class="bean-card-img">
+              <div class="bean-card-overlay">
+                <span class="bean-origin">🇪🇹 Эфиопия</span>
+              </div>
+            </div>
+            <div class="bean-card-body">
+              <h3>Yirgacheffe</h3>
+              <p class="bean-tasting">Жасмин · Бергамот · Мёд</p>
+              <div class="bean-meta">
+                <div class="bean-intensity">
+                  <span>Интенсивность</span>
+                  <div class="intensity-bar"><div class="intensity-fill" style="--w:60%"></div></div>
+                </div>
+                <div class="bean-roast">Светлая обжарка</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bean card 2 -->
+          <article class="bean-card reveal-up" style="--d:0.2s">
+            <div class="bean-card-img-wrap">
+              <img src="assets/beans-colombian.jpg" alt="Колумбийские зёрна" loading="lazy" class="bean-card-img">
+              <div class="bean-card-overlay">
+                <span class="bean-origin">🇨🇴 Колумбия</span>
+              </div>
+            </div>
+            <div class="bean-card-body">
+              <h3>Huila Supremo</h3>
+              <p class="bean-tasting">Карамель · Грецкий орех · Какао</p>
+              <div class="bean-meta">
+                <div class="bean-intensity">
+                  <span>Интенсивность</span>
+                  <div class="intensity-bar"><div class="intensity-fill" style="--w:75%"></div></div>
+                </div>
+                <div class="bean-roast">Средняя обжарка</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bean card 3 -->
+          <article class="bean-card reveal-up" style="--d:0.3s">
+            <div class="bean-card-img-wrap">
+              <img src="assets/beans-guatemalan.jpg" alt="Гватемальские зёрна" loading="lazy" class="bean-card-img">
+              <div class="bean-card-overlay">
+                <span class="bean-origin">🇬🇹 Гватемала</span>
+              </div>
+            </div>
+            <div class="bean-card-body">
+              <h3>Antigua Volcanic</h3>
+              <p class="bean-tasting">Шоколад · Специи · Цедра</p>
+              <div class="bean-meta">
+                <div class="bean-intensity">
+                  <span>Интенсивность</span>
+                  <div class="intensity-bar"><div class="intensity-fill" style="--w:85%"></div></div>
+                </div>
+                <div class="bean-roast">Тёмная обжарка</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Beans closeup with parallax -->
+        <div class="beans-showcase reveal-up">
+          <div class="beans-showcase-img-wrap">
+            <img src="assets/beans-closeup.jpg" alt="Крупный план кофейных зёрен" loading="lazy" class="beans-showcase-img">
+          </div>
+          <div class="beans-showcase-text">
+            <blockquote>
+              «Мы обжариваем каждую партию вручную, контролируя температуру с точностью до градуса. Это не производство — это ремесло.»
+            </blockquote>
+            <cite>— Артём Волков, шеф-обжарщик</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STORY SECTION ===================== -->
+    <section id="story" class="story-section" aria-label="Наша история">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Наша история</span>
+          <h2 class="section-title">Больше чем<br><em>просто кофе</em></h2>
+        </div>
+
+        <div class="story-timeline">
+          <div class="timeline-line" aria-hidden="true"><div class="timeline-line-fill"></div></div>
+
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2019</div>
+            <div class="timeline-card">
+              <h3>Мечта становится реальностью</h3>
+              <p>Двое друзей — Артём и Марина — открыли первую кофейню на 20 квадратных метрах в переулке Старого города. Три столика, одна кофемашина и большая мечта.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2020</div>
+            <div class="timeline-card">
+              <h3>Собственная обжарка</h3>
+              <p>Запустили микро-ростерию. Начали работать напрямую с фермерами в Эфиопии. Первая партия Yirgacheffe стала нашим бестселлером.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2022</div>
+            <div class="timeline-card">
+              <h3>Признание</h3>
+              <p>Победа на Moscow Coffee Championship. Расширение до трёх точек. Запуск подписки на зерно с доставкой по всей России.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-card">
+              <h3>Новая глава</h3>
+              <p>Флагманская кофейня с лабораторией вкуса, каппинг-залом и школой бариста. Ember & Roast — это сообщество, объединённое любовью к кофе.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founder photo -->
+        <div class="story-founder reveal-up">
+          <div class="founder-img-wrap">
+            <img src="assets/story-founder.jpg" alt="Основатели Ember & Roast" loading="lazy" class="founder-img">
+            <div class="founder-img-border"></div>
+          </div>
+          <div class="founder-info">
+            <h3>Артём & Марина</h3>
+            <p>Основатели Ember & Roast. 5 лет поиска идеального вкуса, 12 стран, 47 плантаций.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTERIOR BREAK ===================== -->
+    <section class="interior-break" aria-hidden="true">
+      <div class="interior-parallax">
+        <img src="assets/interior.jpg" alt="" loading="lazy" class="interior-img">
+      </div>
+      <div class="interior-overlay"></div>
+      <div class="interior-text reveal-up">
+        <span class="interior-quote">«Пространство, где время замедляется»</span>
+      </div>
+    </section>
+
+    <!-- ===================== MENU SECTION ===================== -->
+    <section id="menu" class="menu-section" aria-label="Наше меню">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Меню</span>
+          <h2 class="section-title">Найдите свой<br><em>идеальный вкус</em></h2>
+          <p class="section-desc">Каждый напиток готовится с вниманием к деталям из зёрен свежей обжарки.</p>
+        </div>
+
+        <!-- Menu categories -->
+        <div class="menu-tabs reveal-up" role="tablist">
+          <button class="menu-tab active" role="tab" aria-selected="true" data-cat="classics">Классика</button>
+          <button class="menu-tab" role="tab" aria-selected="false" data-cat="specialty">Specialty</button>
+          <button class="menu-tab" role="tab" aria-selected="false" data-cat="cold">Холодные</button>
+          <button class="menu-tab" role="tab" aria-selected="false" data-cat="food">Еда</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <!-- Classics -->
+          <div class="menu-item reveal-up" data-cat="classics" style="--d:0.05s">
+            <div class="menu-item-info">
+              <h3>Эспрессо</h3>
+              <p>Плотный, насыщенный шот из нашего бленда</p>
+            </div>
+            <div class="menu-item-price">180 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="classics" style="--d:0.1s">
+            <div class="menu-item-info">
+              <h3>Американо</h3>
+              <p>Двойной эспрессо, горячая вода. Чистый вкус</p>
+            </div>
+            <div class="menu-item-price">220 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="classics" style="--d:0.15s">
+            <div class="menu-item-info">
+              <h3>Капучино</h3>
+              <p>Эспрессо с бархатистой молочной пеной</p>
+            </div>
+            <div class="menu-item-price">320 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="classics" style="--d:0.2s">
+            <div class="menu-item-info">
+              <h3>Латте</h3>
+              <p>Нежный молочный кофе с крем-пеной</p>
+            </div>
+            <div class="menu-item-price">350 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="classics" style="--d:0.25s">
+            <div class="menu-item-info">
+              <h3>Флэт Уайт</h3>
+              <p>Двойной ристретто с микропеной</p>
+            </div>
+            <div class="menu-item-price">360 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="classics" style="--d:0.3s">
+            <div class="menu-item-info">
+              <h3>Раф</h3>
+              <p>Авторский раф на сливках с ванилью</p>
+            </div>
+            <div class="menu-item-price">380 ₽</div>
+          </div>
+
+          <!-- Specialty -->
+          <div class="menu-item reveal-up" data-cat="specialty" style="--d:0.05s; display:none">
+            <div class="menu-item-info">
+              <h3>Пуровер V60</h3>
+              <p>Yirgacheffe или Huila — выбор за вами</p>
+              <span class="menu-badge">⭐ Выбор бариста</span>
+            </div>
+            <div class="menu-item-price">420 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="specialty" style="--d:0.1s; display:none">
+            <div class="menu-item-info">
+              <h3>Кемекс</h3>
+              <p>Чистый, яркий кофе на 2-3 персоны</p>
+            </div>
+            <div class="menu-item-price">580 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="specialty" style="--d:0.15s; display:none">
+            <div class="menu-item-info">
+              <h3>Аэропресс</h3>
+              <p>Плотное тело, концентрированный вкус</p>
+            </div>
+            <div class="menu-item-price">380 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="specialty" style="--d:0.2s; display:none">
+            <div class="menu-item-info">
+              <h3>Сифон</h3>
+              <p>Театральная подача, исключительная чистота</p>
+              <span class="menu-badge">🔬 Лаборатория</span>
+            </div>
+            <div class="menu-item-price">650 ₽</div>
+          </div>
+
+          <!-- Cold -->
+          <div class="menu-item reveal-up" data-cat="cold" style="--d:0.05s; display:none">
+            <div class="menu-item-info">
+              <h3>Колд Брю</h3>
+              <p>18 часов холодной экстракции. Шоколад + орех</p>
+            </div>
+            <div class="menu-item-price">350 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="cold" style="--d:0.1s; display:none">
+            <div class="menu-item-info">
+              <h3>Эспрессо Тоник</h3>
+              <p>Двойной эспрессо + тоник + долька лайма</p>
+              <span class="menu-badge">🧊 Хит лета</span>
+            </div>
+            <div class="menu-item-price">380 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="cold" style="--d:0.15s; display:none">
+            <div class="menu-item-info">
+              <h3>Бамбл</h3>
+              <p>Эспрессо + апельсиновый сок + карамель</p>
+            </div>
+            <div class="menu-item-price">390 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="cold" style="--d:0.2s; display:none">
+            <div class="menu-item-info">
+              <h3>Айс Латте</h3>
+              <p>На миндальном, овсяном или кокосовом</p>
+            </div>
+            <div class="menu-item-price">370 ₽</div>
+          </div>
+
+          <!-- Food -->
+          <div class="menu-item reveal-up" data-cat="food" style="--d:0.05s; display:none">
+            <div class="menu-item-info">
+              <h3>Круассан классический</h3>
+              <p>Слоёное тесто, масло Normandy, выпечка с утра</p>
+            </div>
+            <div class="menu-item-price">250 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="food" style="--d:0.1s; display:none">
+            <div class="menu-item-info">
+              <h3>Авокадо тост</h3>
+              <p>Ржаной хлеб, авокадо, яйцо пашот, микрозелень</p>
+            </div>
+            <div class="menu-item-price">450 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="food" style="--d:0.15s; display:none">
+            <div class="menu-item-info">
+              <h3>Чизкейк «Баскский»</h3>
+              <p>Крем-сыр, сливки, карамельная корочка</p>
+              <span class="menu-badge">💛 Фаворит</span>
+            </div>
+            <div class="menu-item-price">380 ₽</div>
+          </div>
+          <div class="menu-item reveal-up" data-cat="food" style="--d:0.2s; display:none">
+            <div class="menu-item-info">
+              <h3>Гранола боул</h3>
+              <p>Гранола, йогурт, сезонные ягоды, мёд</p>
+            </div>
+            <div class="menu-item-price">420 ₽</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LATTE ART BREAK ===================== -->
+    <section class="latte-break" aria-hidden="true">
+      <div class="latte-marquee">
+        <div class="marquee-track">
+          <span>SPECIALTY COFFEE</span>
+          <span>·</span>
+          <span>РУЧНАЯ ОБЖАРКА</span>
+          <span>·</span>
+          <span>DIRECT TRADE</span>
+          <span>·</span>
+          <span>С 2019 ГОДА</span>
+          <span>·</span>
+          <span>SPECIALTY COFFEE</span>
+          <span>·</span>
+          <span>РУЧНАЯ ОБЖАРКА</span>
+          <span>·</span>
+          <span>DIRECT TRADE</span>
+          <span>·</span>
+          <span>С 2019 ГОДА</span>
+          <span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA / CONTACT ===================== -->
+    <section id="contact" class="cta-section" aria-label="Контакты">
+      <div class="cta-bg">
+        <img src="assets/latte-art.jpg" alt="" loading="lazy" class="cta-bg-img">
+        <div class="cta-bg-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="cta-content reveal-up">
+          <span class="section-tag section-tag-light">Приходите к нам</span>
+          <h2 class="cta-title">Ваш идеальный кофе<br>ждёт вас</h2>
+          <p class="cta-desc">Закажите столик или просто загляните. Мы работаем каждый день с 8:00 до 22:00.</p>
+
+          <div class="cta-buttons">
+            <a href="tel:+74951234567" class="btn btn-primary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Позвонить</span>
+            </a>
+            <a href="https://t.me/emberroast" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener">
+              <span>Telegram</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.12.098.153.228.168.327.016.099.036.324.02.501z"/></svg>
+            </a>
+          </div>
+
+          <div class="cta-info-grid">
+            <div class="cta-info-item">
+              <div class="cta-info-icon">📍</div>
+              <div>
+                <strong>Адрес</strong>
+                <p>ул. Кофейная, 42<br>Старый город</p>
+              </div>
+            </div>
+            <div class="cta-info-item">
+              <div class="cta-info-icon">⏰</div>
+              <div>
+                <strong>Часы работы</strong>
+                <p>Пн-Пт: 8:00–22:00<br>Сб-Вс: 9:00–23:00</p>
+              </div>
+            </div>
+            <div class="cta-info-item">
+              <div class="cta-info-icon">📧</div>
+              <div>
+                <strong>Email</strong>
+                <p>hello@emberroast.ru</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">☕</span>
+          <span class="logo-text">Ember<span class="logo-amp">&</span>Roast</span>
+          <p class="footer-tagline">Specialty Coffee с 2019</p>
+        </div>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Telegram" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.12.098.153.228.168.327.016.099.036.324.02.501z"/></svg>
+          </a>
+          <a href="#" aria-label="VK" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.188 1.368 1.259 2.184 1.814.616.42 1.084.327 1.084.327l2.178-.03s1.14-.07.6-.964c-.044-.073-.316-.661-1.624-1.869-1.37-1.264-1.186-1.06.463-3.249.005-.005.764-1.096 1.14-1.478-.002-.003.642-.999-1.108-.893 0 0-1.58.106-2.126.868-.356.55-1.182 2.212-1.182 2.212s-.246.485-.454.528c-.233.048-.37-.218-.37-.218s-.354-.966-.413-2.551c-.036-.963-.39-1.396-.39-1.396s-.454-.355-.823-.433c-.298-.064-.773-.079-.773-.079s-1.855-.018-2.76.476c0 0-.593.338-.44.678.17.069.56.13.76.356.164.183.2.8.2.8s.46 2.613-.227 2.942c-.467.224-1.104-.588-1.586-1.58-.27-.554-.383-.875-.383-.875s-.09-.186-.243-.27c-.2-.1-.476-.137-.476-.137l-1.958.012s-.294.008-.401.136c-.095.113-.007.347-.007.347s1.78 4.168 3.793 6.265c1.846 1.924 3.94 1.797 3.94 1.797h.95z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Ember & Roast. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cursor glow effect -->
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
