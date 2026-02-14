@@ -33,7 +33,13 @@
   <nav id="navbar" role="navigation" aria-label="Основная навигация">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo" aria-label="Ember & Roast — на главную">
-        <span class="logo-icon">☕</span>
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7h12v7a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M15 9h2.5a2.5 2.5 0 1 1 0 5H15" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M4 20h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
         <span class="logo-text">Ember<span class="logo-amp">&</span>Roast</span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -124,11 +130,7 @@
 
     <!-- ===================== BEANS SECTION ===================== -->
     <section id="beans" class="beans-section" aria-label="Наши зёрна">
-      <div class="beans-bg-parallax" aria-hidden="true">
-        <video class="beans-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/ai/photos/03-beans-origin-ethiopia.jpg" aria-hidden="true">
-          <source src="assets/ai/videos/02-beans-macro-loop.mp4" type="video/mp4">
-        </video>
-      </div>
+      <div class="beans-bg-parallax" aria-hidden="true"></div>
 
       <div class="container">
         <div class="section-header reveal-up">
@@ -208,7 +210,9 @@
         <!-- Beans closeup with parallax -->
         <div class="beans-showcase reveal-up">
           <div class="beans-showcase-img-wrap">
-            <img src="assets/ai/photos/04-beans-origin-colombia.jpg" alt="Крупный план кофейных зёрен" loading="lazy" class="beans-showcase-img">
+            <video class="beans-showcase-video" autoplay muted loop playsinline preload="metadata" poster="assets/ai/photos/03-beans-origin-ethiopia.jpg" aria-label="Видео крупного плана кофейных зёрен">
+              <source src="assets/ai/videos/02-beans-macro-loop.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="beans-showcase-text">
             <blockquote>
@@ -508,21 +512,36 @@
 
           <div class="cta-info-grid">
             <div class="cta-info-item">
-              <div class="cta-info-icon">📍</div>
+              <div class="cta-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21s-6-4.8-6-10a6 6 0 1 1 12 0c0 5.2-6 10-6 10z" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
               <div>
                 <strong>Адрес</strong>
                 <p>ул. Кофейная, 42<br>Старый город</p>
               </div>
             </div>
             <div class="cta-info-item">
-              <div class="cta-info-icon">⏰</div>
+              <div class="cta-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M12 8v4l2.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div>
                 <strong>Часы работы</strong>
                 <p>Пн-Пт: 8:00–22:00<br>Сб-Вс: 9:00–23:00</p>
               </div>
             </div>
             <div class="cta-info-item">
-              <div class="cta-info-icon">📧</div>
+              <div class="cta-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M4 8l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div>
                 <strong>Email</strong>
                 <p>hello@emberroast.ru</p>
@@ -539,7 +558,13 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="logo-icon">☕</span>
+          <span class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 7h12v7a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M15 9h2.5a2.5 2.5 0 1 1 0 5H15" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M4 20h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
           <span class="logo-text">Ember<span class="logo-amp">&</span>Roast</span>
           <p class="footer-tagline">Specialty Coffee с 2019</p>
         </div>
