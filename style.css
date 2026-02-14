@@ -359,8 +359,7 @@ button { font: inherit; border: none; background: none; cursor: pointer; color: 
 .hero-bg {
   position: absolute;
   inset: -40px;
-  background-size: cover;
-  background-position: center;
+  background: radial-gradient(circle at 30% 20%, rgba(200,168,130,0.18), transparent 45%), #140d08;
   animation: hero-drift 20s ease-in-out infinite alternate;
 }
 .hero-bg-video {
